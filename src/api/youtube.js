@@ -7,6 +7,7 @@ export default class Youtube {
       params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
     });
   }
+  
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
@@ -20,6 +21,28 @@ export default class Youtube {
         },
       })
       .then((res) => res.data.items[0].snippet.thumbnails.default.url);
+  }
+
+  async channelViews(id) {
+    return this.httpClient
+      .get("channels", {
+        params: {
+          part: "statistics",
+          id,
+        },
+      })
+      .then((res) => res.data.items[0].statistics.viewCount);
+  }
+
+  async channelSubscriber(id) {
+    return this.httpClient
+      .get("channels", {
+        params: {
+          part: "statistics",
+          id,
+        },
+      })
+      .then((res) => res.data.items[0].statistics.subscriberCount);
   }
 
   async relatedVideos(id) {

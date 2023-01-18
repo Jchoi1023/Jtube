@@ -1,8 +1,6 @@
 import React from 'react';
 import { format } from 'timeago.js';
 import { useNavigate } from 'react-router-dom';
-import ChannelInfo from './ChannelInfo';
-import ViewCount from './ViewCount';
 
 export default function VideoCard({ video, type }) {
   const { title, thumbnails, channelTitle, publishedAt, channelId } =
@@ -21,18 +19,10 @@ export default function VideoCard({ video, type }) {
         src={thumbnails.medium.url}
         alt={title}
       />
-      <div className='flex'>
-        <div className='flex-none'>
-          <ChannelInfo id={channelId} />
-        </div>
-        <div className='flex-1 w-64'>
-          <p className='font-semibold my-2 line-clamp-2'>{title}</p>
-          <p className='text-sm opacity-80'>{channelTitle}</p>
-          <div className='flex flex-row items-center'>
-            <ViewCount id={channelId} />  
-            <p className='text-sm opacity-80'>  ・  {format(publishedAt)}</p>
-          </div>
-        </div>
+      <div>
+        <p className='font-semibold my-2 line-clamp-2'>{title}</p>
+        <p className='text-sm opacity-80'>{channelTitle}</p>
+        <p className='text-sm opacity-80'>{format(publishedAt)}</p>
       </div>
     </li>
   );

@@ -12,6 +12,18 @@ export default class FakeYoutube {
       .then((res) => res.data.items[0].snippet.thumbnails.default.url);
   }
 
+  async channelViews() {
+    return axios
+    .get(`/videos/channeldetail.json`)
+    .then((res) => res.data.items[0].statistics.viewCount);
+  }
+
+  async channelSubscriber() {
+    return axios
+    .get(`/videos/channeldetail.json`)
+    .then((res) => res.data.items[0].statistics.subscriberCount);
+  }
+  
   async relatedVideos() {
     return axios
       .get(`/videos/related.json`)

@@ -8957,6 +8957,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"numeral@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "numeral@npm:2.0.6"
+  checksum: 89f011116539692bf53fde380adeb0579623d00f782703c71c0062d4a8686770c404a041ff4eef454de53925a9f75bba1fa52726057b13d40473f707730b07c2
+  languageName: node
+  linkType: hard
+
 "nwsapi@npm:^2.2.0":
   version: 2.2.2
   resolution: "nwsapi@npm:2.2.2"
@@ -13045,6 +13052,7 @@ __metadata:
     "@testing-library/user-event": ^13.2.1
     axios: ^1.2.1
     eslint-config-react-app: ^7.0.1
+    numeral: ^2.0.6
     react: ^18.2.0
     react-dom: ^18.2.0
     react-icons: ^4.7.1
