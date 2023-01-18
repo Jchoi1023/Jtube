@@ -12,7 +12,7 @@ export default function Subscriber({id}) {
     } = useQuery(["subscriberCount", id], () => youtube.channelSubscriber(id), {staleTime: 1000 * 60 * 5});
     return (
       <div className="flex items-center">
-       {subscriber && <p className="text-sm">{numeral(subscriber).format("0 a")} subscribers</p>}
+       {subscriber && <p className="text-sm">{numeral(subscriber).format("0a")} subscribers</p>}
       </div>
     );
 }
